@@ -1,0 +1,22 @@
+<%= error_messages_for(@agency) %>
+
+<table summary="Agency form fields">
+    <tr>
+	  <th><%= f.label(:name, "Name") %></th>
+	  <td><%= f.text_field(:name , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:phonenum, "Phone") %></th>
+	  <td><%= f.phone_field(:phonenum) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:purpose, "Purpose") %></th>
+	  <td><%= f.text_area(:purpose, size: "80x6") %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:website, "Website") %></th>
+	  <td><%= f.text_field(:website , size: 100) %></td>
+	</tr>
+
+</table>
+

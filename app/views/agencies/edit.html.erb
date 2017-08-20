@@ -1,0 +1,14 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="agencies edit">
+  <h2> Update Agency</h2>
+  
+  <%= form_for(:agency, :url => {:action => 'update', :id => @agency.id}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <div class="form-buttons">
+    <%= submit_tag("Update Agency") %>
+  </div>
+  <% end %>  
+</div>

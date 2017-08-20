@@ -1,0 +1,48 @@
+<% @page_title = "Program" %>
+<%= link_to("<< Back to Management Page", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
+<%= link_to("To Agencies Page>>", {:controller => 'agencies', :action => 'index'}, :class => 'back-link-right') %>
+<div class="programs index">
+<h2>Programs</h2>
+
+
+<%= form_tag( :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Programs" %>
+<%= submit_tag "Search", class: "action"%>
+
+<% end %>
+
+
+<%= link_to("Add New Program", {:action => 'new'}, :class => 'action new') %>
+  
+  <table class="listing" summary="Program list">
+	<tr class="header">
+	  
+	  <th>Name</th>
+	  <th>Agency</th>
+	  <th>Short Description</th>
+	  <th>Phone</th>
+	  <th>Email</th>
+	  <th>Website</th>
+	  <th>Physical Address </th>
+	  <th>City</th>
+	</tr>
+	<% @programs.each do |program| %>
+	<tr>
+	  
+	  <td><%= program.name %></td>
+	  <td><%= program.agency.name %></td>
+	  <td><%= program.shortdesc %></td>
+	  <td><%= number_to_phone(program.phonenum, :area_code => true) %></td>
+	  <td class="column1"><%= program.email %></td>
+	  <td class="column1"><%= program.website %></td>
+	  <td><%= program.pyaddress %></td>
+	  <td><%= program.pycity %></td>
+	  <td class="actions">
+		<%= link_to("Show", {:action => 'show', :id => program.id}, :class => 'action show') %>
+		<%= link_to("Edit", {:action => 'edit', :id => program.id}, :class => 'action edit') %>
+		<%= link_to("Delete", {:action => 'delete', :id => program.id}, :class => 'action delete') %>
+	  </td>
+	</tr>
+	<% end %>
+  </table>
+</div>

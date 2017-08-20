@@ -1,0 +1,15 @@
+<%= error_messages_for(@category) %>
+
+<table summary="Category form fields">
+    <tr>
+	  <th><%= f.label(:name, "Name") %></th>
+	  <td><%= f.text_field(:name , size: 100) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:description, "Description") %></th>
+	  <td><%= f.text_field(:description, size: 250) %></td>
+	</tr>
+
+
+</table>
+

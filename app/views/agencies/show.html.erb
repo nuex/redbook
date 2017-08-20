@@ -1,0 +1,35 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="agencies show">
+  <h2> Show Agency</h2>
+  
+  <table summary="Agency detail view">
+    <tr>
+	  <th>Name:</th>
+	  <td><%= @agency.name %></td>
+	</tr>
+    <tr>
+	  <th>Phone:</th>
+	  <td><%= number_to_phone(@agency.phonenum, :area_code => true) %></td>
+	</tr>
+	<tr>
+	  <th>Purpose:</th>
+	  <td><%= @agency.purpose %></td>
+	</tr>
+    <tr>
+	  <th>Website:</th>
+	  <td><%= @agency.website %></td>
+	</tr>
+    <tr>
+	  <th>Created:</th>
+	  <td><%= @agency.created_at.strftime("%b %d, %Y %I:%M %p %Z") %></td>
+	</tr>
+    <tr>
+	  <th>Updated:</th>
+	  <td><%= @agency.updated_at.strftime("%b %d, %Y %I:%M %p %Z") %></td>
+	</tr>
+  </table>
+  
+  <hr>
+
+</div>

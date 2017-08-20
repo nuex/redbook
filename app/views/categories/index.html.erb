@@ -1,0 +1,27 @@
+<% @page_title = "Category" %>
+<%= link_to("<< Back to Management Page", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
+<div class="categories index">
+  <h2>Categories</h2>
+    
+  <%= link_to("Add New Categories", {:action => 'new'}, :class => 'action new') %>
+  
+  <table class="listing" summary="Category list">
+	<tr class="header">
+	  <th>&nbsp;</th>
+	  <th>Name</th>
+	  <th>Description</th>
+	</tr>
+	<% @categories.each do |category| %>
+	<tr>
+	  <td><%= category.id %></td>
+	  <td><%= category.name %></td>
+	  <td><%= category.description %></td>
+	  <td class="actions">
+		<%= link_to("Show", {:action => 'show', :id => category.id}, :class => 'action show') %>
+		<%= link_to("Edit", {:action => 'edit', :id => category.id}, :class => 'action edit') %>
+		<%= link_to("Delete", {:action => 'delete', :id => category.id}, :class => 'action delete') %>
+	  </td>
+	</tr>
+	<% end %>
+  </table>
+</div>

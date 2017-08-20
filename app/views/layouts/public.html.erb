@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Red Book<%= " | #{@page_title}" if @page_title %></title>
+      <%= stylesheet_link_tag('application', :media => 'all') %>
+	</head>
+	
+	<body>
+	  <div id="header">
+	    <h1> Red Book </h1>
+	  </div>
+	  <div id="main">
+	    <div id="navigation">
+	    </div>	
+	  
+	  
+	    <div id="content">
+			<!-- before yield -->
+			<%= yield %>
+			<!-- after yield -->
+		</div>
+		
+		<div class="clear"></div>
+		
+	  </div>
+	  <div id="footer">
+		<p id="copyright">&copy bgadd.org / New</p>
+	  </div>
+	</body>
+</html>

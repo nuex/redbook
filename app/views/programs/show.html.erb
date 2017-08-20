@@ -1,0 +1,52 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="programs show">
+  <h2> Show Program</h2>
+  
+  <table summary="Programs detail view">
+    <tr>
+	  <th>Agency Name:</th>
+	  <td><%= @program.agency.name %></td>
+	</tr>
+    <tr>
+    <tr>
+	  <th>Name:</th>
+	  <td><%= @program.name %></td>
+	</tr>
+    <tr>
+	  <th>Phone:</th>
+	  <td><%= number_to_phone(@program.phonenum, :area_code => true) %></td>
+	</tr>
+	<tr>
+	  <th>Description:</th>
+	  <td><%= @program.description %></td>
+	</tr>
+    <tr>
+	  <th>Email:</th>
+	  <td><%= @program.email %></td>
+	</tr>
+    <tr>
+	  <th>Website:</th>
+	  <td><%= @program.website %></td>
+	</tr>
+    <tr>
+	  <th>Location:</th>
+	  <td><%= @program.pyaddress %><br>
+	  <%= @program.pycity %>, <%=@program.pystate %> <%=@program.pyzip %></td>
+	</tr>
+    <tr>
+	  <th>Address:</th>
+	  <td><%= @program.maddress %><br>
+	  <%= @program.mcity %>, <%=@program.mstate %> <%=@program.mzip %></td>
+	</tr>
+    <tr>
+	  <th>Created:</th>
+	  <td><%= @program.created_at.strftime("%b %d, %Y %I:%M %p %Z") %></td>
+	</tr>
+    <tr>
+	  <th>Updated:</th>
+	  <td><%= @program.updated_at.strftime("%b %d, %Y %I:%M %p %Z") %></td>
+	</tr>
+  </table>
+
+</div>

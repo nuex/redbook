@@ -1,0 +1,81 @@
+<%= error_messages_for(@program) %>
+
+<table summary="Program form fields">
+	<tr>
+	  <th><%= f.label(:agency_id, "Agency") %></th>
+	  <td><%= f.collection_select(:agency_id , Agency.all, :id, :name) %>
+    <tr>
+	  <th><%= f.label(:name, "Name") %></th>
+	  <td><%= f.text_field(:name , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:shortdesc, "Short Description") %></th>
+	  <td><%= f.text_area(:shortdesc , size: "80x6") %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:description, "Description") %></th>
+	  <td><%= f.text_area(:description, size: "80x6") %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:eligibility, "Eligibility") %></th>
+	  <td><%= f.text_area(:eligibility, size: "80x6") %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:keywords, "Keywords") %></th>
+	  <td><%= f.text_field(:keywords , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:phonenum, "Phone") %></th>
+	  <td><%= f.phone_field(:phonenum) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:email, "Email") %></th>
+	  <td><%= f.text_field(:email , size: 100) %></td>
+	</tr>
+    <tr>
+    <tr>
+	  <th><%= f.label(:website, "Website") %></th>
+	  <td><%= f.text_field(:website , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:pyaddress, "Physical Address") %></th>
+	  <td><%= f.text_field(:pyaddress , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:pycity, "Physical City") %></th>
+	  <td><%= f.text_field(:pycity , size: 40) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:pystate, "Physical State") %></th>
+	  <td><%= f.text_field(:pystate , size: 10) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:pyzip, "Physical Zip") %></th>
+	  <td><%= f.text_field(:pyzip , size: 10) %></td>	  
+	</tr>
+    <tr>
+	  <th><%= f.label(:maddress, "Mailing Address") %></th>
+	  <td><%= f.text_field(:maddress , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:maddress2, "Address Line2") %></th>
+	  <td><%= f.text_field(:maddress2 , size: 100) %></td>
+	</tr>
+    <tr>
+	  <th><%= f.label(:mcity, "Mailing City") %></th>
+	  <td><%= f.text_field(:mcity , size: 40) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:mstate, "Mailing State") %></th>
+	  <td><%= f.text_field(:mstate , size: 10) %></td>
+	</tr>
+	<tr>
+	  <th><%= f.label(:mzip, "Mailing Zip") %></th>
+	  <td><%= f.text_field(:mzip , size: 10) %></td>	  
+	</tr>
+	<tr>
+	  <th><%= f.label :categories, "Category" %></th>
+	  <td><%= select_tag "category", options_from_collection_for_select(Category.all, 'id', 'name',@program.categories.map{ |j| j.id }), :multiple => true %></td>
+    </tr>
+</table>
+
