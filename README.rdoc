@@ -1,28 +1,18 @@
-== README
+redbook
+=======
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Redbook is a rails app
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Ensure you have Docker and docker-compose installed on your machine.
 
-* System dependencies
+Then, run the following:
 
-* Configuration
+```
+docker-compose run --rm app bundle
+docker-compose run --rm app bundle exec rake db:setup
+docker-compose up
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The app should be running at `http://localhost:3000`.
