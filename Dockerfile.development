@@ -1,0 +1,12 @@
+FROM ubuntu:artful
+MAINTAINER Chase James <nx@nu-ex.com>
+
+RUN apt-get -qq update && \
+    apt-get install -y curl build-essential ruby ruby-dev ruby-bundler \
+                       libmysqlclient-dev tzdata
+VOLUME /opt/redbook
+WORKDIR /opt/redbook
+COPY . /opt/redbook
+ENV BUNDLE_PATH /ruby_gems
+EXPOSE 3000
+CMD bundle exec rails s -b 0.0.0.0
